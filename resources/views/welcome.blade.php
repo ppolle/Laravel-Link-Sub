@@ -8,10 +8,17 @@
                 <div class="panel-heading">Welcome</div>
 
                 <div class="panel-body">
-                    Your Application's Landing Page.<br>
-                    @foreach($links as $link)
-                        <a href="{{$link->url}}">{{$link->title}}</a><br>
+                    <div class='col-md-6'>
+                        Your Application's Landing Page.<br>
+                        @foreach($links as $link)
+                        <a href="{{$link->url}}" target="_blank">{{$link->title}}</a><br>
                     @endforeach
+                    </div>
+                    <div class='col-md-6'>
+                        <a href="/submit" class="btn btn-success">Submit A Link</a>
+                        
+                    </div>
+                   
                 </div>
             </div>
         </div>

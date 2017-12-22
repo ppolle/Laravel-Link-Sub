@@ -15,17 +15,17 @@ class LinkController extends Controller
    }
 
    public function postLink(Request $request){
-   		//$this->validate($request,[
-        //    'title' => 'required|max:255',
-        //    'url '=> 'required|max:255',
-         //   'description' => 'required|max:255',
-        //   
-       // ]);
+
+   		$this->validate($request,[
+            'title' => 'required|max:255',
+            'url'=> 'required|max:255',
+            'description' => 'required|max:255',
+        ]);
 
         $link = new Link;
 
-        $link->title = $request->description;
-        $link->url = $request->description;
+        $link->title = $request->title;
+        $link->url = $request->url;
         $link->description = $request->description;
         $link->save();
         return redirect('/');
