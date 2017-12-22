@@ -8,7 +8,10 @@
                 <div class="panel-heading">Welcome</div>
 
                 <div class="panel-body">
-                    Your Application's Landing Page.
+                    Your Application's Landing Page.<br>
+                    @foreach($links as $link)
+                        <a href="{{$link->url}}">{{$link->title}}</a><br>
+                    @endforeach
                 </div>
             </div>
         </div>

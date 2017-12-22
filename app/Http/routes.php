@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/','LinkController@getHome');
+
+Route::get('/submit',function(){
+	return view('submit');
 });
+Route::post('/submit','LinkController@postLink');
 
 Route::auth();
 
