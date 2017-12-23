@@ -13,9 +13,7 @@
 
 Route::get('/','LinkController@getHome');
 
-Route::get('/submit',function(){
-	return view('submit');
-});
+Route::get('/submit','LinkController@getSubmit');
 Route::post('/submit','LinkController@postLink');
 
 Route::auth();

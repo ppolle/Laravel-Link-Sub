@@ -31,6 +31,17 @@
                     <textarea class="form-control" id="description" name="description" placeholder="description">{{ old('description') }}</textarea>
                    
                 </div>
+                <div class="form-group">
+                    <script>
+                        var tags = [
+                            @foreach ($tags as $tag)
+                            {tag: "{{$tag}}" },
+                            @endforeach
+                        ];
+                    </script>
+                    <input type="text" name="tags" id="tags" class="form-control">
+                    
+                </div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
         </div>

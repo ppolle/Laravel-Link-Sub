@@ -11,8 +11,9 @@ class LinkController extends Controller
 {
    public function getHome(){
    	$links = Link::all();
-   	return view('welcome')->withLinks($links);
+    return view('welcome')->withLinks($links);
    }
+                          
 
    public function postLink(Request $request){
 
@@ -30,4 +31,9 @@ class LinkController extends Controller
         $link->save();
         return redirect('/');
       }
+
+    public function getSubmit(){
+       $tags = Link::existingTags()->pluck('name');
+       return view('submit')->withTags($tags);
+    }
 }
